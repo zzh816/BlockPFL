@@ -1,0 +1,4 @@
+# Numerical archive: Python 3.12.14. Exact numerical replay uses this NumPy version.
+numpy==2.3.5
+# Plotting; SciPy is not used by this experiment package.
+matplotlib==3.11.2

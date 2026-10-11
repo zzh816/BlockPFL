@@ -1,0 +1,15 @@
+{
+  "geometry_sampling/allocation_revision/allocation_results.csv": "a0c55300d0f86775a4c8c958d0ad1bd4976c34faf4a5d88a609c681d5bb2fa66",
+  "geometry_sampling/allocation_revision/allocation_results.json": "41dd2cb812e07662b3749c1eeabd9cdbbca01eb81d45e3eb6c8eeb58324ace71",
+  "geometry_sampling/allocation_revision/wdbc.data": "d606af411f3e5be8a317a5a8b652b425aaf0ff38ca683d5327ffff94c3695f4a",
+  "geometry_sampling/allocation_revision/wdbc_results.csv": "352399439e2e61536c39fd3c62a34030ee88e9e6833d293de6e1c62b421a8dbe",
+  "geometry_sampling/allocation_revision/wdbc_results.json": "18b4246caf78defbc3f08de80b2a159bcca02bf2ef6c66eea301a7ccf479b320",
+  "geometry_sampling/benchmark_results.csv": "6bfee73db9f25b52fefa3edcb598d56a96daecf4479e1a0bdc8ce56b93390d74",
+  "geometry_sampling/benchmark_results.json": "9618e83e9275227a3c27446197eae09d9cfe5ad0de6db2d5a21ccb8bdefb5186",
+  "geometry_sampling/benchmark_summary_export.csv": "ad357c43c8fb3fa3919f825dd26bd362d44e9c51fa987229e41180e36dee9858",
+  "geometry_sampling/fixtures/mechanism_reference.json": "2251eea25d71b01ac8c024c99cd4c64bea715e723741ebb9589c355b47556513",
+  "geometry_sampling/original_run_metrics_long.csv": "aee3eea21b3167c1860b9e487207afa0dd67303fbc3dc01a25588772115227e7",
+  "geometry_sampling/original_trace_metrics_long.csv": "d35b3aa3942a16ba6ac9c1e7388b4e61dfdef7fde67f55b49c33cbafa85c5c66",
+  "geometry_sampling/reproducibility.json": "27b3f0a310301ac7551e45108e65b39f0cdf1f46a5a3453e10398fee1ac678e0",
+  "geometry_sampling/results.json": "3235b11149c4aabf2e4257f7a5843689418b986abcd60fe450dd62c1079de306"
+}
