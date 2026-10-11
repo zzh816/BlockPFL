@@ -1,0 +1,265 @@
+Block-probability ablation: 20 paired original-model data seeds, 32000 paid calls.
+All gradients are exact/current. Diagnostics cannot affect updates or probability scores.
+EMA is heuristic: no score is asserted to be a true variance upper bound.
+First hits are instantaneous observed crossings, not convergence guarantees or deployable free stopping.
+{
+  "uniform": {
+    "final_mapping": {
+      "mean": 0.011677638318557938,
+      "sd": 0.03357978527062877
+    },
+    "update_prefix_mapping": {
+      "mean": 167.60737844968517,
+      "sd": 0.7008673816442306
+    },
+    "budget_mapping": {
+      "mean": 167.60737844968517,
+      "sd": 0.7008673816442306
+    },
+    "final_objective": {
+      "mean": -0.2595918317942249,
+      "sd": 0.42181861134844273
+    },
+    "final_shared_false_split_rate": {
+      "mean": 0.0,
+      "sd": 0.0
+    },
+    "final_nonshared_false_fusion_rate": {
+      "mean": 0.0,
+      "sd": 0.0
+    },
+    "any_shared_false_split_rate": {
+      "mean": 0.0,
+      "sd": 0.0
+    },
+    "training_seconds": {
+      "mean": 0.12121503000080339,
+      "sd": 0.0023325612315105403
+    },
+    "diagnostic_seconds": {
+      "mean": 0.1928227949999382,
+      "sd": 0.003265640491191493
+    },
+    "average_p": {
+      "mean": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "sd": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "first_hits": {
+      "1.0": {
+        "reached": 20,
+        "total": 20,
+        "conditional_median_calls": 16044.0,
+        "final_reached": 20,
+        "restricted_mean_calls": 16529.6
+      },
+      "0.1": {
+        "reached": 20,
+        "total": 20,
+        "conditional_median_calls": 18528.0,
+        "final_reached": 19,
+        "restricted_mean_calls": 20102.0
+      },
+      "0.01": {
+        "reached": 20,
+        "total": 20,
+        "conditional_median_calls": 21196.0,
+        "final_reached": 19,
+        "restricted_mean_calls": 23017.2
+      }
+    }
+  },
+  "fixed_pilot": {
+    "final_mapping": {
+      "mean": 0.011478710884501284,
+      "sd": 0.03630177232847304
+    },
+    "update_prefix_mapping": {
+      "mean": 168.43151425735257,
+      "sd": 6.116848838311161
+    },
+    "budget_mapping": {
+      "mean": 168.29545087577577,
+      "sd": 6.110733870921917
+    },
+    "final_objective": {
+      "mean": -0.3345965935242081,
+      "sd": 0.41238358178726003
+    },
+    "final_shared_false_split_rate": {
+      "mean": 0.0,
+      "sd": 0.0
+    },
+    "final_nonshared_false_fusion_rate": {
+      "mean": 0.0,
+      "sd": 0.0
+    },
+    "any_shared_false_split_rate": {
+      "mean": 0.0,
+      "sd": 0.0
+    },
+    "training_seconds": {
+      "mean": 0.12151085499754118,
+      "sd": 0.0013910148722976598
+    },
+    "diagnostic_seconds": {
+      "mean": 0.19275192000059177,
+      "sd": 0.0017848696407602072
+    },
+    "average_p": {
+      "mean": [
+        0.05746441300820119,
+        0.057659294548463615,
+        0.38252273111219054,
+        0.5023535613311471
+      ],
+      "sd": [
+        0.0008148812879626591,
+        0.0006711577477532809,
+        0.02676933173312231,
+        0.02671818566377533
+      ]
+    },
+    "first_hits": {
+      "1.0": {
+        "reached": 20,
+        "total": 20,
+        "conditional_median_calls": 16112.0,
+        "final_reached": 20,
+        "restricted_mean_calls": 16316.4
+      },
+      "0.1": {
+        "reached": 20,
+        "total": 20,
+        "conditional_median_calls": 18476.0,
+        "final_reached": 19,
+        "restricted_mean_calls": 18635.6
+      },
+      "0.01": {
+        "reached": 18,
+        "total": 20,
+        "conditional_median_calls": 20644.0,
+        "final_reached": 18,
+        "restricted_mean_calls": 22112.0
+      }
+    }
+  },
+  "adaptive_ema": {
+    "final_mapping": {
+      "mean": 0.004758246110990666,
+      "sd": 0.007509617489855173
+    },
+    "update_prefix_mapping": {
+      "mean": 168.8367911135298,
+      "sd": 6.5263825107155045
+    },
+    "budget_mapping": {
+      "mean": 168.7003224550968,
+      "sd": 6.519859214112619
+    },
+    "final_objective": {
+      "mean": -0.31875264076267057,
+      "sd": 0.4442595660097519
+    },
+    "final_shared_false_split_rate": {
+      "mean": 0.0,
+      "sd": 0.0
+    },
+    "final_nonshared_false_fusion_rate": {
+      "mean": 0.0,
+      "sd": 0.0
+    },
+    "any_shared_false_split_rate": {
+      "mean": 0.0,
+      "sd": 0.0
+    },
+    "training_seconds": {
+      "mean": 0.16269270501225036,
+      "sd": 0.002036978759540845
+    },
+    "diagnostic_seconds": {
+      "mean": 0.19411230498835721,
+      "sd": 0.002236117415116674
+    },
+    "average_p": {
+      "mean": [
+        0.06634176563133673,
+        0.06637109807076069,
+        0.34606255457393315,
+        0.5212245817239695
+      ],
+      "sd": [
+        0.0016999146578521708,
+        0.001555930746893465,
+        0.019326028213414514,
+        0.022222510594622855
+      ]
+    },
+    "first_hits": {
+      "1.0": {
+        "reached": 20,
+        "total": 20,
+        "conditional_median_calls": 15952.0,
+        "final_reached": 20,
+        "restricted_mean_calls": 16392.8
+      },
+      "0.1": {
+        "reached": 20,
+        "total": 20,
+        "conditional_median_calls": 18496.0,
+        "final_reached": 20,
+        "restricted_mean_calls": 18983.2
+      },
+      "0.01": {
+        "reached": 19,
+        "total": 20,
+        "conditional_median_calls": 20904.0,
+        "final_reached": 18,
+        "restricted_mean_calls": 22122.8
+      }
+    }
+  },
+  "paired_fixed_pilot_minus_uniform": {
+    "final_mapping": {
+      "mean": -0.00019892743405665542,
+      "ci95_lower": -0.024100907822198567,
+      "ci95_upper": 0.023703052954085254
+    },
+    "budget_mapping": {
+      "mean": 0.6880724260906277,
+      "ci95_lower": -2.0771607065634012,
+      "ci95_upper": 3.4533055587446566
+    },
+    "final_objective": {
+      "mean": -0.07500476172998319,
+      "ci95_lower": -0.2005302023346576,
+      "ci95_upper": 0.05052067887469122
+    }
+  },
+  "paired_adaptive_ema_minus_uniform": {
+    "final_mapping": {
+      "mean": -0.006919392207567274,
+      "ci95_lower": -0.023334904970703146,
+      "ci95_upper": 0.009496120555568597
+    },
+    "budget_mapping": {
+      "mean": 1.0929440054116597,
+      "ci95_lower": -1.890803533824494,
+      "ci95_upper": 4.076691544647813
+    },
+    "final_objective": {
+      "mean": -0.059160808968445645,
+      "ci95_lower": -0.2038053980701101,
+      "ci95_upper": 0.08548378013321883
+    }
+  }
+}
