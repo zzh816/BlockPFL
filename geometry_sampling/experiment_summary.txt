@@ -1,0 +1,501 @@
+CURRENT-MANUSCRIPT EXPERIMENT SUMMARY (recomputed from archived per-run data)
+Original JSON SHA256: 3235b11149c4aabf2e4257f7a5843689418b986abcd60fe450dd62c1079de306
+Benchmark JSON SHA256: 9618e83e9275227a3c27446197eae09d9cfe5ad0de6db2d5a21ccb8bdefb5186
+Benchmark CSV SHA256: 6bfee73db9f25b52fefa3edcb598d56a96daecf4479e1a0bdc8ce56b93390d74
+Original numerical replay checked=True, identical_bytes=True, source_digest_matches=True.
+Benchmark complete numerical replay checked=True; Python=3.12.14; NumPy=2.3.5.
+Original array components use zero-based bracket indices; final_state indices are [client][block].
++/- means sample SD. Continuous mean intervals use t(df=19); paired intervals use run differences.
+These are nominal 95% descriptive intervals: no simultaneous coverage or multiple-comparison correction.
+Publication plots use per-method pointwise mean intervals; those are not paired-difference intervals.
+Binary event intervals are Wilson, and numerical events use radius tolerance 1e-10.
+No universal superiority: geometric sampling can lose in zero-mean/high-disagreement regimes,
+and the gradient table can give better final residual/objective under paid initialization and additional memory.
+Coupled nonconvex labels are linear-tilt signal labels, not population-minimizer sharing labels.
+Synthetic exact-gradient dense reference; no image/LLM/agent application or measured communication speed claim.
+
+ORIGINAL TWO-SAMPLER EXPERIMENTS
+20 paired runs/configuration; fixed-data cases vary update RNG only; noise sweep varies data/update RNG.
+Mean mapping = exact uniform pre-update prefix mean squared FULL proximal mapping at mu=1/(2L).
+Final mapping/objective/population gain are separate final-state diagnostics.
+Training cost is M*T. Diagnostic derivatives are separately charged N*B*(T+2); raw sample preprocessing is separate.
+Conditional estimator variance uses sum p_b*sigma_b^2, not the theorem's inverse-probability noise budget.
+Numerical structure uses centered-radius tolerance 1e-10, not exact-zero theorem events.
+
+main_groups/common_gradient: N=8, B=1, M=2, T=1600, gamma=0.03, M*T=3200, tau=[0.12]
+  geometric
+    mean_squared_full_mapping: 0.042301184 +/- 0; mean CI95 [0.042301184, 0.042301184]
+    final_squared_full_mapping: 1.2621774e-29 +/- 0; mean CI95 [1.2621774e-29, 1.2621774e-29]
+    final_objective: -2 +/- 0; mean CI95 [-2, -2]
+    mean_conditional_estimator_variance: 0 +/- 0; mean CI95 [0, 0]
+    final_population_gain: 0 +/- 0; mean CI95 [0, 0]
+    any numerical split on labeled shared blocks: 0/20; Wilson CI95 [0, 0.16112516]
+  inverse_inclusion
+    mean_squared_full_mapping: 0.04507262 +/- 0.0011414819; mean CI95 [0.04453839, 0.04560685]
+    final_squared_full_mapping: 1.9721523e-29 +/- 0; mean CI95 [1.9721523e-29, 1.9721523e-29]
+    final_objective: -2 +/- 0; mean CI95 [-2, -2]
+    mean_conditional_estimator_variance: 0.12968748 +/- 0.0025402207; mean CI95 [0.12849862, 0.13087634]
+    final_population_gain: 0 +/- 0; mean CI95 [0, 0]
+    any numerical split on labeled shared blocks: 20/20; Wilson CI95 [0.83887484, 1]
+  Paired geometric minus inverse inclusion, prefix mean mapping: -0.0027714351 +/- 0.0011414819; mean CI95 [-0.0033056651, -0.0022372051]
+
+main_groups/large_mean_small_heterogeneity: N=8, B=1, M=2, T=1600, gamma=0.03, M*T=3200, tau=[0.12]
+  geometric
+    mean_squared_full_mapping: 0.042979057 +/- 0.00033928626; mean CI95 [0.042820266, 0.043137848]
+    final_squared_full_mapping: 0.00064629858 +/- 0.00046444568; mean CI95 [0.00042893131, 0.00086366585]
+    final_objective: -1.9995008 +/- 0.00021673885; mean CI95 [-1.9996022, -1.9993993]
+    mean_conditional_estimator_variance: 0.053320982 +/- 0.00064274101; mean CI95 [0.05302017, 0.053621794]
+    final_population_gain: 0.00082431955 +/- 0.00049110148; mean CI95 [0.00059447698, 0.0010541621]
+  inverse_inclusion
+    mean_squared_full_mapping: 0.044836308 +/- 0.0010425984; mean CI95 [0.044348356, 0.045324259]
+    final_squared_full_mapping: 0.00016959514 +/- 7.364113e-05; mean CI95 [0.00013513003, 0.00020406025]
+    final_objective: -1.9997545 +/- 6.8925652e-05; mean CI95 [-1.9997868, -1.9997223]
+    mean_conditional_estimator_variance: 0.1558571 +/- 0.0021518532; mean CI95 [0.15485, 0.1568642]
+    final_population_gain: 0.00042506673 +/- 2.9486222e-05; mean CI95 [0.00041126675, 0.0004388667]
+  Paired geometric minus inverse inclusion, prefix mean mapping: -0.0018572504 +/- 0.0012083614; mean CI95 [-0.0024227809, -0.0012917198]
+
+main_groups/zero_mean_large_heterogeneity: N=8, B=1, M=2, T=1600, gamma=0.03, M*T=3200, tau=[0.12]
+  geometric
+    mean_squared_full_mapping: 0.0069592123 +/- 0.00073977645; mean CI95 [0.0066129863, 0.0073054384]
+    final_squared_full_mapping: 0.0014929652 +/- 0.001001128; mean CI95 [0.0010244229, 0.0019615076]
+    final_objective: -0.23044944 +/- 0.0005034675; mean CI95 [-0.23068507, -0.23021381]
+    mean_conditional_estimator_variance: 0.15555768 +/- 0.008443187; mean CI95 [0.15160614, 0.15950921]
+    final_population_gain: 0.31202848 +/- 0.0021128838; mean CI95 [0.31103962, 0.31301734]
+  inverse_inclusion
+    mean_squared_full_mapping: 0.005733718 +/- 0.00013637152; mean CI95 [0.0056698942, 0.0057975419]
+    final_squared_full_mapping: 0.0005973641 +/- 0.00034798637; mean CI95 [0.00043450146, 0.00076022673]
+    final_objective: -0.23089963 +/- 0.00017489302; mean CI95 [-0.23098148, -0.23081778]
+    mean_conditional_estimator_variance: 0.069873402 +/- 0.00053642804; mean CI95 [0.069622345, 0.070124458]
+    final_population_gain: 0.31261162 +/- 0.00033017051; mean CI95 [0.3124571, 0.31276615]
+  Paired geometric minus inverse inclusion, prefix mean mapping: 0.0012254943 +/- 0.00076229949; mean CI95 [0.00086872715, 0.0015822614]
+
+main_groups/nonconvex_M2: N=8, B=4, M=2, T=3200, gamma=0.0025252525, M*T=6400, tau=[0.25, 0.25, 0.25, 0.25]
+  geometric
+    mean_squared_full_mapping: 0.48952098 +/- 0.027676654; mean CI95 [0.4765679, 0.50247405]
+    final_squared_full_mapping: 0.055375413 +/- 0.016709811; mean CI95 [0.04755498, 0.063195845]
+    final_objective: -0.023233358 +/- 0.00079503211; mean CI95 [-0.023605445, -0.022861272]
+    mean_conditional_estimator_variance: 0.24614677 +/- 0.01075251; mean CI95 [0.24111444, 0.2511791]
+    final_population_gain: 0.033629215 +/- 0.0013246357; mean CI95 [0.033009266, 0.034249163]
+    any numerical split on labeled shared blocks: 0/20; Wilson CI95 [0, 0.16112516]
+  inverse_inclusion
+    mean_squared_full_mapping: 0.55225578 +/- 0.040434837; mean CI95 [0.5333317, 0.57117987]
+    final_squared_full_mapping: 0.02169248 +/- 0.010010002; mean CI95 [0.017007655, 0.026377305]
+    final_objective: -0.024846314 +/- 0.000477801; mean CI95 [-0.025069931, -0.024622696]
+    mean_conditional_estimator_variance: 0.47392055 +/- 0.028436715; mean CI95 [0.46061176, 0.48722934]
+    final_population_gain: 0.034421956 +/- 0.00065691776; mean CI95 [0.034114509, 0.034729403]
+    any numerical split on labeled shared blocks: 20/20; Wilson CI95 [0.83887484, 1]
+  Paired geometric minus inverse inclusion, prefix mean mapping: -0.062734805 +/- 0.031945672; mean CI95 [-0.07768584, -0.047783771]
+
+main_groups/nonconvex_M4: N=8, B=4, M=4, T=1600, gamma=0.0025252525, M*T=6400, tau=[0.25, 0.25, 0.25, 0.25]
+  geometric
+    mean_squared_full_mapping: 0.88608825 +/- 0.05006029; mean CI95 [0.86265931, 0.90951719]
+    final_squared_full_mapping: 0.011669482 +/- 0.0025717165; mean CI95 [0.010465881, 0.012873082]
+    final_objective: -0.02532052 +/- 0.00012490587; mean CI95 [-0.025378978, -0.025262062]
+    mean_conditional_estimator_variance: 0.052041497 +/- 0.0010385604; mean CI95 [0.051555435, 0.052527558]
+    final_population_gain: 0.034276446 +/- 0.00059523709; mean CI95 [0.033997866, 0.034555025]
+    any numerical split on labeled shared blocks: 0/20; Wilson CI95 [0, 0.16112516]
+  inverse_inclusion
+    mean_squared_full_mapping: 0.94440489 +/- 0.053028421; mean CI95 [0.91958683, 0.96922296]
+    final_squared_full_mapping: 0.0076787477 +/- 0.0026552019; mean CI95 [0.0064360749, 0.0089214204]
+    final_objective: -0.025513458 +/- 0.00012659344; mean CI95 [-0.025572705, -0.02545421]
+    mean_conditional_estimator_variance: 0.25979994 +/- 0.013258926; mean CI95 [0.25359457, 0.26600531]
+    final_population_gain: 0.034605491 +/- 0.00018932749; mean CI95 [0.034516883, 0.034694099]
+    any numerical split on labeled shared blocks: 20/20; Wilson CI95 [0.83887484, 1]
+  Paired geometric minus inverse inclusion, prefix mean mapping: -0.058316643 +/- 0.017382921; mean CI95 [-0.0664521, -0.050181185]
+
+main_groups/nonconvex_M8: N=8, B=4, M=8, T=800, gamma=0.0025252525, M*T=6400, tau=[0.25, 0.25, 0.25, 0.25]
+  geometric
+    mean_squared_full_mapping: 1.7520919 +/- 0.099716961; mean CI95 [1.705423, 1.7987609]
+    final_squared_full_mapping: 8.3597928e-18 +/- 2.4762634e-17; mean CI95 [-3.2294764e-18, 1.9949062e-17]
+    final_objective: -0.02588588 +/- 5.3652103e-16; mean CI95 [-0.02588588, -0.02588588]
+    mean_conditional_estimator_variance: 0 +/- 0; mean CI95 [0, 0]
+    final_population_gain: 0.034736527 +/- 1.6286906e-12; mean CI95 [0.034736527, 0.034736527]
+    any numerical split on labeled shared blocks: 0/20; Wilson CI95 [0, 0.16112516]
+  inverse_inclusion
+    mean_squared_full_mapping: 1.7520919 +/- 0.099716961; mean CI95 [1.705423, 1.7987609]
+    final_squared_full_mapping: 8.3597928e-18 +/- 2.4762634e-17; mean CI95 [-3.2294765e-18, 1.9949062e-17]
+    final_objective: -0.02588588 +/- 5.3784412e-16; mean CI95 [-0.02588588, -0.02588588]
+    mean_conditional_estimator_variance: 0 +/- 0; mean CI95 [0, 0]
+    final_population_gain: 0.034736527 +/- 1.6286892e-12; mean CI95 [0.034736527, 0.034736527]
+    any numerical split on labeled shared blocks: 0/20; Wilson CI95 [0, 0.16112516]
+  Paired geometric minus inverse inclusion, prefix mean mapping: 0 +/- 0; mean CI95 [0, 0]
+
+tau_sweep/tau_0: N=8, B=2, M=2, T=1200, gamma=0.0075, M*T=2400, tau=[0.0, 0.0]
+  geometric
+    mean_squared_full_mapping: 0.14066372 +/- 0.0062252794; mean CI95 [0.1377502, 0.14357724]
+    final_squared_full_mapping: 4.1595527e-08 +/- 1.9714557e-08; mean CI95 [3.236883e-08, 5.0822223e-08]
+    final_objective: -1.2716 +/- 9.8572783e-09; mean CI95 [-1.2716, -1.2716]
+    mean_conditional_estimator_variance: 0.054206531 +/- 0.0060761301; mean CI95 [0.051362815, 0.057050248]
+    final_population_gain: 0.12340238 +/- 1.0803489e-06; mean CI95 [0.12340187, 0.12340288]
+    any numerical split on labeled shared blocks: 20/20; Wilson CI95 [0.83887484, 1]
+  inverse_inclusion
+    mean_squared_full_mapping: 0.14308464 +/- 0.0066616376; mean CI95 [0.13996689, 0.14620238]
+    final_squared_full_mapping: 5.388854e-08 +/- 3.32299e-08; mean CI95 [3.8336468e-08, 6.9440612e-08]
+    final_objective: -1.2716 +/- 1.661495e-08; mean CI95 [-1.2716, -1.2716]
+    mean_conditional_estimator_variance: 0.21462695 +/- 0.0099924564; mean CI95 [0.20995034, 0.21930357]
+    final_population_gain: 0.12340206 +/- 2.5103722e-06; mean CI95 [0.12340089, 0.12340324]
+    any numerical split on labeled shared blocks: 20/20; Wilson CI95 [0.83887484, 1]
+  Paired geometric minus inverse inclusion, prefix mean mapping: -0.0024209145 +/- 0.0022929663; mean CI95 [-0.0034940557, -0.0013477732]
+
+tau_sweep/tau_0.05: N=8, B=2, M=2, T=1200, gamma=0.0075, M*T=2400, tau=[0.05, 0.05]
+  geometric
+    mean_squared_full_mapping: 0.13772271 +/- 0.0063111172; mean CI95 [0.13476902, 0.14067641]
+    final_squared_full_mapping: 0.00017305453 +/- 7.1431442e-05; mean CI95 [0.00013962359, 0.00020648548]
+    final_objective: -1.2449287 +/- 4.6717593e-05; mean CI95 [-1.2449505, -1.2449068]
+    mean_conditional_estimator_variance: 0.074013309 +/- 0.0071159879; mean CI95 [0.070682924, 0.077343694]
+    final_population_gain: 0.12489595 +/- 5.4953399e-05; mean CI95 [0.12487023, 0.12492167]
+    any numerical split on labeled shared blocks: 20/20; Wilson CI95 [0.83887484, 1]
+  inverse_inclusion
+    mean_squared_full_mapping: 0.14111412 +/- 0.0067353589; mean CI95 [0.13796187, 0.14426636]
+    final_squared_full_mapping: 6.3591122e-05 +/- 2.228709e-05; mean CI95 [5.3160443e-05, 7.4021801e-05]
+    final_objective: -1.2449996 +/- 1.4893333e-05; mean CI95 [-1.2450065, -1.2449926]
+    mean_conditional_estimator_variance: 0.22228555 +/- 0.0096165441; mean CI95 [0.21778487, 0.22678624]
+    final_population_gain: 0.12492757 +/- 1.3155628e-05; mean CI95 [0.12492141, 0.12493372]
+    any numerical split on labeled shared blocks: 20/20; Wilson CI95 [0.83887484, 1]
+  Paired geometric minus inverse inclusion, prefix mean mapping: -0.003391408 +/- 0.0022016954; mean CI95 [-0.0044218331, -0.0023609828]
+
+tau_sweep/tau_0.14: N=8, B=2, M=2, T=1200, gamma=0.0075, M*T=2400, tau=[0.14, 0.14]
+  geometric
+    mean_squared_full_mapping: 0.13375541 +/- 0.0065321002; mean CI95 [0.13069829, 0.13681253]
+    final_squared_full_mapping: 0.0010240342 +/- 0.00040266265; mean CI95 [0.0008355823, 0.0012124861]
+    final_objective: -1.204479 +/- 0.00020519354; mean CI95 [-1.204575, -1.2043829]
+    mean_conditional_estimator_variance: 0.13597177 +/- 0.010612112; mean CI95 [0.13100515, 0.14093839]
+    final_population_gain: 0.1198914 +/- 0.0012484025; mean CI95 [0.11930713, 0.12047567]
+    any numerical split on labeled shared blocks: 0/20; Wilson CI95 [0, 0.16112516]
+  inverse_inclusion
+    mean_squared_full_mapping: 0.13698602 +/- 0.0066638038; mean CI95 [0.13386726, 0.14010477]
+    final_squared_full_mapping: 0.00041446265 +/- 0.00017519806; mean CI95 [0.00033246743, 0.00049645787]
+    final_objective: -1.2047887 +/- 8.9525489e-05; mean CI95 [-1.2048306, -1.2047468]
+    mean_conditional_estimator_variance: 0.25071556 +/- 0.0093818138; mean CI95 [0.24632473, 0.25510638]
+    final_population_gain: 0.11987789 +/- 0.00014330451; mean CI95 [0.11981082, 0.11994496]
+    any numerical split on labeled shared blocks: 20/20; Wilson CI95 [0.83887484, 1]
+  Paired geometric minus inverse inclusion, prefix mean mapping: -0.0032306068 +/- 0.0020759708; mean CI95 [-0.004202191, -0.0022590226]
+
+tau_sweep/tau_0.25: N=8, B=2, M=2, T=1200, gamma=0.0075, M*T=2400, tau=[0.25, 0.25]
+  geometric
+    mean_squared_full_mapping: 0.13098515 +/- 0.0068305038; mean CI95 [0.12778838, 0.13418193]
+    final_squared_full_mapping: 0.0030147723 +/- 0.0011226912; mean CI95 [0.0024893366, 0.003540208]
+    final_objective: -1.1654315 +/- 0.00060411051; mean CI95 [-1.1657142, -1.1651488]
+    mean_conditional_estimator_variance: 0.26624535 +/- 0.019040794; mean CI95 [0.25733399, 0.27515672]
+    final_population_gain: 0.10336926 +/- 0.0045262678; mean CI95 [0.1012509, 0.10548762]
+    any numerical split on labeled shared blocks: 0/20; Wilson CI95 [0, 0.16112516]
+  inverse_inclusion
+    mean_squared_full_mapping: 0.13171507 +/- 0.0066735864; mean CI95 [0.12859174, 0.13483841]
+    final_squared_full_mapping: 0.0012033635 +/- 0.00053072417; mean CI95 [0.00095497694, 0.0014517501]
+    final_objective: -1.1663971 +/- 0.00028997917; mean CI95 [-1.1665328, -1.1662614]
+    mean_conditional_estimator_variance: 0.31255435 +/- 0.0094478992; mean CI95 [0.3081326, 0.3169761]
+    final_population_gain: 0.10286066 +/- 0.00038673077; mean CI95 [0.10267966, 0.10304165]
+    any numerical split on labeled shared blocks: 20/20; Wilson CI95 [0.83887484, 1]
+  Paired geometric minus inverse inclusion, prefix mean mapping: -0.00072992413 +/- 0.0014859596; mean CI95 [-0.0014253746, -3.4473636e-05]
+
+tau_sweep/tau_0.6: N=8, B=2, M=2, T=1200, gamma=0.0075, M*T=2400, tau=[0.6, 0.6]
+  geometric
+    mean_squared_full_mapping: 0.1360049 +/- 0.0077045122; mean CI95 [0.13239907, 0.13961072]
+    final_squared_full_mapping: 0.013947943 +/- 0.0078667218; mean CI95 [0.010266203, 0.017629682]
+    final_objective: -1.1160128 +/- 0.003241016; mean CI95 [-1.1175296, -1.1144959]
+    mean_conditional_estimator_variance: 0.80124579 +/- 0.018186039; mean CI95 [0.79273446, 0.80975712]
+    final_population_gain: 0.023299181 +/- 0.010236146; mean CI95 [0.018508517, 0.028089844]
+    any numerical split on labeled shared blocks: 0/20; Wilson CI95 [0, 0.16112516]
+  inverse_inclusion
+    mean_squared_full_mapping: 0.12800703 +/- 0.0069914473; mean CI95 [0.12473493, 0.13127913]
+    final_squared_full_mapping: 0.0034988624 +/- 0.0008179906; mean CI95 [0.0031160311, 0.0038816938]
+    final_objective: -1.121066 +/- 0.00081854563; mean CI95 [-1.1214491, -1.1206829]
+    mean_conditional_estimator_variance: 0.59084688 +/- 0.010581647; mean CI95 [0.58589451, 0.59579924]
+    final_population_gain: 0.01124853 +/- 0.001035915; mean CI95 [0.010763707, 0.011733353]
+    any numerical split on labeled shared blocks: 20/20; Wilson CI95 [0.83887484, 1]
+  Paired geometric minus inverse inclusion, prefix mean mapping: 0.0079978648 +/- 0.0020418438; mean CI95 [0.0070422525, 0.0089534771]
+
+tau_sweep/tau_1: N=8, B=2, M=2, T=1200, gamma=0.0075, M*T=2400, tau=[1.0, 1.0]
+  geometric
+    mean_squared_full_mapping: 0.12571041 +/- 0.0071929724; mean CI95 [0.122344, 0.12907683]
+    final_squared_full_mapping: 0.001861896 +/- 0.0013629631; mean CI95 [0.0012240096, 0.0024997823]
+    final_objective: -1.1165045 +/- 0.0061631345; mean CI95 [-1.1193889, -1.1136201]
+    mean_conditional_estimator_variance: 0.91416756 +/- 0.0025664289; mean CI95 [0.91296643, 0.91536868]
+    final_population_gain: 0.0046838336 +/- 0.003881219; mean CI95 [0.0028673672, 0.0065003]
+    any numerical split on labeled shared blocks: 0/20; Wilson CI95 [0, 0.16112516]
+  inverse_inclusion
+    mean_squared_full_mapping: 0.12478509 +/- 0.0070996908; mean CI95 [0.12146233, 0.12810785]
+    final_squared_full_mapping: 0.00079804289 +/- 0.00096892967; mean CI95 [0.00034456985, 0.0012515159]
+    final_objective: -1.123984 +/- 0.00081332668; mean CI95 [-1.1243646, -1.1236033]
+    mean_conditional_estimator_variance: 0.62601672 +/- 0.01066373; mean CI95 [0.62102594, 0.6310075]
+    final_population_gain: 0.00022866138 +/- 0.00018922237; mean CI95 [0.00014010259, 0.00031722018]
+    any numerical split on labeled shared blocks: 20/20; Wilson CI95 [0.83887484, 1]
+  Paired geometric minus inverse inclusion, prefix mean mapping: 0.00092532549 +/- 0.00026789188; mean CI95 [0.00079994823, 0.0010507027]
+
+noise_participation_sweep/noise_0_M2: N=8, B=2, M=2, T=1200, gamma=0.0075, M*T=2400, tau=[0.25, 0.25]
+  geometric
+    mean_squared_full_mapping: 0.13135392 +/- 0.01104651; mean CI95 [0.12618399, 0.13652384]
+    final_squared_full_mapping: 0.0036817024 +/- 0.001857867; mean CI95 [0.0028121939, 0.004551211]
+    final_objective: -1.1542466 +/- 0.0010184268; mean CI95 [-1.1547232, -1.15377]
+    mean_conditional_estimator_variance: 0.24862676 +/- 0.014889405; mean CI95 [0.2416583, 0.25559521]
+    final_population_gain: 0.095305177 +/- 0.0049630912; mean CI95 [0.092982379, 0.097627975]
+    any numerical split on labeled shared blocks: 0/20; Wilson CI95 [0, 0.16112516]
+  inverse_inclusion
+    mean_squared_full_mapping: 0.13244568 +/- 0.011176645; mean CI95 [0.12721485, 0.13767651]
+    final_squared_full_mapping: 0.0013895052 +/- 0.00066478221; mean CI95 [0.0010783775, 0.0017006328]
+    final_objective: -1.1554832 +/- 0.0003731854; mean CI95 [-1.1556579, -1.1553085]
+    mean_conditional_estimator_variance: 0.30770731 +/- 0.015097124; mean CI95 [0.30064164, 0.31477298]
+    final_population_gain: 0.093641527 +/- 0.00047027762; mean CI95 [0.09342143, 0.093861624]
+    any numerical split on labeled shared blocks: 20/20; Wilson CI95 [0.83887484, 1]
+  Paired geometric minus inverse inclusion, prefix mean mapping: -0.0010917612 +/- 0.0014398987; mean CI95 [-0.0017656545, -0.0004178678]
+
+noise_participation_sweep/noise_0_M4: N=8, B=2, M=4, T=600, gamma=0.0075, M*T=2400, tau=[0.25, 0.25]
+  geometric
+    mean_squared_full_mapping: 0.25839758 +/- 0.02125435; mean CI95 [0.24845024, 0.26834492]
+    final_squared_full_mapping: 0.00095784133 +/- 0.00034631109; mean CI95 [0.00079576275, 0.0011199199]
+    final_objective: -1.1557344 +/- 0.00019335301; mean CI95 [-1.1558249, -1.1556439]
+    mean_conditional_estimator_variance: 0.070333645 +/- 0.0023105792; mean CI95 [0.069252261, 0.071415029]
+    final_population_gain: 0.092560826 +/- 0.0016588378; mean CI95 [0.091784466, 0.093337186]
+    any numerical split on labeled shared blocks: 0/20; Wilson CI95 [0, 0.16112516]
+  inverse_inclusion
+    mean_squared_full_mapping: 0.25922251 +/- 0.021242181; mean CI95 [0.24928086, 0.26916416]
+    final_squared_full_mapping: 0.00072315643 +/- 0.00025760902; mean CI95 [0.0006025917, 0.00084372116]
+    final_objective: -1.1558644 +/- 0.00013944065; mean CI95 [-1.1559296, -1.1557991]
+    mean_conditional_estimator_variance: 0.17376397 +/- 0.0097962938; mean CI95 [0.16917917, 0.17834878]
+    final_population_gain: 0.093111787 +/- 0.00018596567; mean CI95 [0.093024752, 0.093198821]
+    any numerical split on labeled shared blocks: 20/20; Wilson CI95 [0.83887484, 1]
+  Paired geometric minus inverse inclusion, prefix mean mapping: -0.00082493019 +/- 0.00089462552; mean CI95 [-0.0012436278, -0.00040623256]
+
+noise_participation_sweep/noise_0_M8: N=8, B=2, M=8, T=300, gamma=0.0075, M*T=2400, tau=[0.25, 0.25]
+  geometric
+    mean_squared_full_mapping: 0.51067133 +/- 0.041020036; mean CI95 [0.49147337, 0.5298693]
+    final_squared_full_mapping: 0.025136866 +/- 0.0075840103; mean CI95 [0.02158744, 0.028686292]
+    final_objective: -1.1436816 +/- 0.0037920051; mean CI95 [-1.1454563, -1.1419069]
+    mean_conditional_estimator_variance: 0 +/- 0; mean CI95 [0, 0]
+    final_population_gain: 0.086766596 +/- 0.00093578817; mean CI95 [0.086328633, 0.087204558]
+    any numerical split on labeled shared blocks: 0/20; Wilson CI95 [0, 0.16112516]
+  inverse_inclusion
+    mean_squared_full_mapping: 0.51067133 +/- 0.041020036; mean CI95 [0.49147337, 0.5298693]
+    final_squared_full_mapping: 0.025136866 +/- 0.0075840103; mean CI95 [0.02158744, 0.028686292]
+    final_objective: -1.1436816 +/- 0.0037920051; mean CI95 [-1.1454563, -1.1419069]
+    mean_conditional_estimator_variance: 0 +/- 0; mean CI95 [0, 0]
+    final_population_gain: 0.086766596 +/- 0.00093578817; mean CI95 [0.086328633, 0.087204558]
+    any numerical split on labeled shared blocks: 0/20; Wilson CI95 [0, 0.16112516]
+  Paired geometric minus inverse inclusion, prefix mean mapping: 0 +/- 0; mean CI95 [0, 0]
+
+noise_participation_sweep/noise_0.12_M2: N=8, B=2, M=2, T=1200, gamma=0.0075, M*T=2400, tau=[0.25, 0.25]
+  geometric
+    mean_squared_full_mapping: 0.13148766 +/- 0.011079776; mean CI95 [0.12630216, 0.13667315]
+    final_squared_full_mapping: 0.0036672649 +/- 0.0018663204; mean CI95 [0.0027938, 0.0045407297]
+    final_objective: -1.1551195 +/- 0.010059604; mean CI95 [-1.1598275, -1.1504114]
+    mean_conditional_estimator_variance: 0.25026761 +/- 0.014263794; mean CI95 [0.24359195, 0.25694328]
+    final_population_gain: 0.095595178 +/- 0.0053874298; mean CI95 [0.093073784, 0.098116573]
+    any numerical split on labeled shared blocks: 0/20; Wilson CI95 [0, 0.16112516]
+  inverse_inclusion
+    mean_squared_full_mapping: 0.13257172 +/- 0.011177073; mean CI95 [0.12734069, 0.13780275]
+    final_squared_full_mapping: 0.001388947 +/- 0.00066376043; mean CI95 [0.0010782976, 0.0016995965]
+    final_objective: -1.1563466 +/- 0.0098976993; mean CI95 [-1.1609789, -1.1517143]
+    mean_conditional_estimator_variance: 0.30865908 +/- 0.015134285; mean CI95 [0.30157602, 0.31574214]
+    final_population_gain: 0.093968265 +/- 0.0012709108; mean CI95 [0.09337346, 0.094563069]
+    any numerical split on labeled shared blocks: 20/20; Wilson CI95 [0.83887484, 1]
+  Paired geometric minus inverse inclusion, prefix mean mapping: -0.0010840603 +/- 0.0014067247; mean CI95 [-0.0017424277, -0.00042569284]
+
+noise_participation_sweep/noise_0.12_M4: N=8, B=2, M=4, T=600, gamma=0.0075, M*T=2400, tau=[0.25, 0.25]
+  geometric
+    mean_squared_full_mapping: 0.258482 +/- 0.021289241; mean CI95 [0.24851833, 0.26844568]
+    final_squared_full_mapping: 0.00095431315 +/- 0.00035638317; mean CI95 [0.00078752069, 0.0011211056]
+    final_objective: -1.1565981 +/- 0.0097293316; mean CI95 [-1.1611516, -1.1520446]
+    mean_conditional_estimator_variance: 0.070864865 +/- 0.0026527084; mean CI95 [0.069623359, 0.072106371]
+    final_population_gain: 0.092874917 +/- 0.0018215252; mean CI95 [0.092022417, 0.093727417]
+    any numerical split on labeled shared blocks: 0/20; Wilson CI95 [0, 0.16112516]
+  inverse_inclusion
+    mean_squared_full_mapping: 0.25934669 +/- 0.021285383; mean CI95 [0.24938483, 0.26930856]
+    final_squared_full_mapping: 0.00071734739 +/- 0.00025684703; mean CI95 [0.00059713928, 0.0008375555]
+    final_objective: -1.1567291 +/- 0.0097519286; mean CI95 [-1.1612932, -1.1521651]
+    mean_conditional_estimator_variance: 0.17408281 +/- 0.0097745318; mean CI95 [0.16950819, 0.17865743]
+    final_population_gain: 0.093423031 +/- 0.0012569504; mean CI95 [0.09283476, 0.094011302]
+    any numerical split on labeled shared blocks: 20/20; Wilson CI95 [0.83887484, 1]
+  Paired geometric minus inverse inclusion, prefix mean mapping: -0.00086468917 +/- 0.0009412383; mean CI95 [-0.0013052022, -0.00042417608]
+
+noise_participation_sweep/noise_0.12_M8: N=8, B=2, M=8, T=300, gamma=0.0075, M*T=2400, tau=[0.25, 0.25]
+  geometric
+    mean_squared_full_mapping: 0.51102868 +/- 0.041021009; mean CI95 [0.49183026, 0.5302271]
+    final_squared_full_mapping: 0.025157258 +/- 0.0075889164; mean CI95 [0.021605536, 0.02870898]
+    final_objective: -1.1445329 +/- 0.010495058; mean CI95 [-1.1494448, -1.1396211]
+    mean_conditional_estimator_variance: 0 +/- 0; mean CI95 [0, 0]
+    final_population_gain: 0.087078175 +/- 0.001411322; mean CI95 [0.086417656, 0.087738695]
+    any numerical split on labeled shared blocks: 0/20; Wilson CI95 [0, 0.16112516]
+  inverse_inclusion
+    mean_squared_full_mapping: 0.51102868 +/- 0.041021009; mean CI95 [0.49183026, 0.5302271]
+    final_squared_full_mapping: 0.025157258 +/- 0.0075889164; mean CI95 [0.021605536, 0.02870898]
+    final_objective: -1.1445329 +/- 0.010495058; mean CI95 [-1.1494448, -1.1396211]
+    mean_conditional_estimator_variance: 0 +/- 0; mean CI95 [0, 0]
+    final_population_gain: 0.087078175 +/- 0.001411322; mean CI95 [0.086417656, 0.087738695]
+    any numerical split on labeled shared blocks: 0/20; Wilson CI95 [0, 0.16112516]
+  Paired geometric minus inverse inclusion, prefix mean mapping: -5.5511151e-18 +/- 2.4825342e-17; mean CI95 [-1.7169733e-17, 6.0675024e-18]
+
+noise_participation_sweep/noise_0.4_M2: N=8, B=2, M=2, T=1200, gamma=0.0075, M*T=2400, tau=[0.25, 0.25]
+  geometric
+    mean_squared_full_mapping: 0.13195261 +/- 0.011614752; mean CI95 [0.12651674, 0.13738849]
+    final_squared_full_mapping: 0.0036543209 +/- 0.0018615576; mean CI95 [0.0027830852, 0.0045255567]
+    final_objective: -1.158256 +/- 0.032826987; mean CI95 [-1.1736195, -1.1428925]
+    mean_conditional_estimator_variance: 0.26516942 +/- 0.014254799; mean CI95 [0.25849797, 0.27184087]
+    final_population_gain: 0.096063971 +/- 0.0067936215; mean CI95 [0.092884459, 0.099243484]
+    any numerical split on labeled shared blocks: 17/20; Wilson CI95 [0.63958114, 0.94763125]
+  inverse_inclusion
+    mean_squared_full_mapping: 0.13312498 +/- 0.011634443; mean CI95 [0.1276799, 0.13857007]
+    final_squared_full_mapping: 0.0014044664 +/- 0.00065251239; mean CI95 [0.0010990812, 0.0017098516]
+    final_objective: -1.159512 +/- 0.03272493; mean CI95 [-1.1748277, -1.1441962]
+    mean_conditional_estimator_variance: 0.31590712 +/- 0.016402056; mean CI95 [0.30823072, 0.32358352]
+    final_population_gain: 0.094555594 +/- 0.0040518639; mean CI95 [0.092659264, 0.096451925]
+    any numerical split on labeled shared blocks: 20/20; Wilson CI95 [0.83887484, 1]
+  Paired geometric minus inverse inclusion, prefix mean mapping: -0.0011723683 +/- 0.0014307124; mean CI95 [-0.0018419624, -0.00050277434]
+
+noise_participation_sweep/noise_0.4_M4: N=8, B=2, M=4, T=600, gamma=0.0075, M*T=2400, tau=[0.25, 0.25]
+  geometric
+    mean_squared_full_mapping: 0.25894875 +/- 0.022228224; mean CI95 [0.24854562, 0.26935188]
+    final_squared_full_mapping: 0.00095111487 +/- 0.00038314777; mean CI95 [0.00077179619, 0.0011304335]
+    final_objective: -1.159777 +/- 0.032568833; mean CI95 [-1.1750197, -1.1445343]
+    mean_conditional_estimator_variance: 0.074831938 +/- 0.0048442458; mean CI95 [0.072564761, 0.077099115]
+    final_population_gain: 0.093481214 +/- 0.0040165168; mean CI95 [0.091601427, 0.095361002]
+    any numerical split on labeled shared blocks: 0/20; Wilson CI95 [0, 0.16112516]
+  inverse_inclusion
+    mean_squared_full_mapping: 0.25998646 +/- 0.022271191; mean CI95 [0.24956323, 0.2704097]
+    final_squared_full_mapping: 0.00070814623 +/- 0.00025825975; mean CI95 [0.00058727694, 0.00082901551]
+    final_objective: -1.1599107 +/- 0.032595251; mean CI95 [-1.1751657, -1.1446556]
+    mean_conditional_estimator_variance: 0.17663098 +/- 0.01031212; mean CI95 [0.17180476, 0.1814572]
+    final_population_gain: 0.094014237 +/- 0.0041082813; mean CI95 [0.092091502, 0.095936972]
+    any numerical split on labeled shared blocks: 20/20; Wilson CI95 [0.83887484, 1]
+  Paired geometric minus inverse inclusion, prefix mean mapping: -0.0010377148 +/- 0.0011573399; mean CI95 [-0.0015793665, -0.00049606306]
+
+noise_participation_sweep/noise_0.4_M8: N=8, B=2, M=8, T=300, gamma=0.0075, M*T=2400, tau=[0.25, 0.25]
+  geometric
+    mean_squared_full_mapping: 0.51237735 +/- 0.042847851; mean CI95 [0.49232394, 0.53243076]
+    final_squared_full_mapping: 0.025230608 +/- 0.0076251117; mean CI95 [0.021661946, 0.02879927]
+    final_objective: -1.1476722 +/- 0.032591236; mean CI95 [-1.1629254, -1.132419]
+    mean_conditional_estimator_variance: 0 +/- 0; mean CI95 [0, 0]
+    final_population_gain: 0.087747091 +/- 0.0040896419; mean CI95 [0.085833079, 0.089661102]
+    any numerical split on labeled shared blocks: 0/20; Wilson CI95 [0, 0.16112516]
+  inverse_inclusion
+    mean_squared_full_mapping: 0.51237735 +/- 0.042847851; mean CI95 [0.49232394, 0.53243076]
+    final_squared_full_mapping: 0.025230608 +/- 0.0076251117; mean CI95 [0.021661946, 0.02879927]
+    final_objective: -1.1476722 +/- 0.032591236; mean CI95 [-1.1629254, -1.132419]
+    mean_conditional_estimator_variance: 0 +/- 0; mean CI95 [0, 0]
+    final_population_gain: 0.087747091 +/- 0.0040896419; mean CI95 [0.085833079, 0.089661102]
+    any numerical split on labeled shared blocks: 0/20; Wilson CI95 [0, 0.16112516]
+  Paired geometric minus inverse inclusion, prefix mean mapping: -1.110223e-17 +/- 3.4171944e-17; mean CI95 [-2.7095192e-17, 4.8907317e-18]
+
+coupled_group/coupled_all_path_certificate: N=8, B=2, M=2, T=1600, gamma=0.0075, M*T=3200, tau=[7.069642920184449, 0.25]
+  geometric
+    mean_squared_full_mapping: 0.10684089 +/- 0.0095293585; mean CI95 [0.10238101, 0.11130077]
+    final_squared_full_mapping: 0.0028026192 +/- 0.0012106347; mean CI95 [0.0022360247, 0.0033692136]
+    final_objective: -1.2017256 +/- 0.00060891377; mean CI95 [-1.2020106, -1.2014406]
+    mean_conditional_estimator_variance: 0.23969884 +/- 0.0099366665; mean CI95 [0.23504834, 0.24434935]
+    final_population_gain: 0.094970056 +/- 0.0046373592; mean CI95 [0.092799705, 0.097140407]
+    any numerical split on labeled shared blocks: 0/20; Wilson CI95 [0, 0.16112516]
+  inverse_inclusion
+    mean_squared_full_mapping: 0.10540526 +/- 0.0094075114; mean CI95 [0.10100241, 0.10980811]
+    final_squared_full_mapping: 0.001267699 +/- 0.00080981174; mean CI95 [0.00088869548, 0.0016467026]
+    final_objective: -1.2024907 +/- 0.0004063789; mean CI95 [-1.2026809, -1.2023005]
+    mean_conditional_estimator_variance: 0.26536019 +/- 0.012892159; mean CI95 [0.25932648, 0.27139391]
+    final_population_gain: 0.093835527 +/- 0.00051810001; mean CI95 [0.093593049, 0.094078005]
+    any numerical split on labeled shared blocks: 0/20; Wilson CI95 [0, 0.16112516]
+  Paired geometric minus inverse inclusion, prefix mean mapping: 0.0014356339 +/- 0.00043666786; mean CI95 [0.001231267, 0.0016400007]
+
+Coupled quadratic: fixed public geometry bound checks are not actual sampled-score measurements
+and are not an HT sharing certificate; both methods may remain shared under a conservative threshold.
+This certificate instance is a specific positive-definite quadratic subclass, not a general nonconvex extension.
+
+NEW MULTIDIMENSIONAL GRADIENT-TABLE BENCHMARK
+equal_budget: Each method spends 8000 client-block gradient calls. Geometric/HT: 1000 updates. Table: 128 full-table initialization calls plus 984 updates*8 calls. Table uses the same first 984 draws of the common 1000-draw schedule.
+memory: Table adds N*B*block_dimension=1024 float64 entries=8192 bytes, excluding state/method-independent arrays. Dense reference, no measured communication reduction.
+output: Uniform random pre-update prefix for each method at its available update count; final iterate is a separate diagnostic
+budget_running_mapping: Full-table initialization consumes 128 calls at the unchanged initial mapping; subsequent pre-update mappings weighted by M=8 calls. Average over equal total oracle work.
+diagnostics: N*B*(T_method+1) extra client-block derivative diagnostics; excluded from training budget, never supplied to any training estimator/cache. Objective/population evaluation also external diagnostics.
+preprocessing: 32768 scalar observations generated/read per data run; empirical linear coefficients are sufficient statistics, identically available to all methods. No uncharged training-gradient-table initialization.
+randomization: 20 independent data/update seed pairs per case; methods paired on both seeds and on common schedule prefix; independent data and algorithm RNGs
+table_scope: Client-component gradient table estimator; neither SCAFFOLD nor original shared-variable SAGA
+structure: First two blocks have zero population tilts. Coupled-case structure metrics concern these signal labels, not population-minimizer sharing labels. Fusion tolerance 1e-10.
+limitations: Synthetic exact-gradient dense NumPy reference; fixed equal step, no per-method tuning, no application/communication/large-model speed claim; common noisy objective and strong nonconvex initialization only two controlled cases.
+All statistics below are recomputed from benchmark_results.csv, cross-checked against archived JSON.
+Structure rates are averages over labeled blocks, not necessarily Bernoulli run events.
+paired_population_gain is evaluated at the FINAL state; it is not a random-prefix risk guarantee.
+
+common_potential_nonconvex
+  dimension={'N': 32, 'B': 4, 'block_dimension': 8, 'total_dimension': 32}; M=8; repetitions=20; budget=8000; h=0.015; gamma=0.00375; p=[0.25, 0.25, 0.25, 0.25]; tau=[0.15, 0.15, 0.25, 0.3]; L=6.0; sufficient h limit=0.018518519
+  Geometric
+    mean_squared_full_mapping: 123.55402 +/- 3.1612957; mean CI95 [122.07449, 125.03356]
+    budget_mean_squared_full_mapping: 123.55402 +/- 3.1612957; mean CI95 [122.07449, 125.03356]
+    final_squared_full_mapping: 0.019458935 +/- 0.0066069095; mean CI95 [0.016366806, 0.022551063]
+    final_objective: 0.85496665 +/- 0.96062048; mean CI95 [0.40538243, 1.3045509]
+    paired_population_gain: -0.56904644 +/- 0.54771761; mean CI95 [-0.82538617, -0.31270671]
+    any_shared_false_split_rate: 0 +/- 0; mean CI95 [0, 0]
+    final_shared_false_split_rate: 0 +/- 0; mean CI95 [0, 0]
+    final_nonshared_false_fusion_rate: 0 +/- 0; mean CI95 [0, 0]
+    random_prefix_shared_false_split_rate: 0 +/- 0; mean CI95 [0, 0]
+    random_prefix_nonshared_false_fusion_rate: 0.004075 +/- 0.0021598916; mean CI95 [0.0030641396, 0.0050858604]
+  Inverse inclusion
+    mean_squared_full_mapping: 124.37102 +/- 2.0300263; mean CI95 [123.42094, 125.3211]
+    budget_mean_squared_full_mapping: 124.37102 +/- 2.0300263; mean CI95 [123.42094, 125.3211]
+    final_squared_full_mapping: 0.019308522 +/- 0.005590453; mean CI95 [0.016692109, 0.021924934]
+    final_objective: -0.35141183 +/- 0.28776231; mean CI95 [-0.48608874, -0.21673493]
+    paired_population_gain: 0.099263303 +/- 0.11829279; mean CI95 [0.043900573, 0.15462603]
+    any_shared_false_split_rate: 1 +/- 0; mean CI95 [1, 1]
+    final_shared_false_split_rate: 0 +/- 0; mean CI95 [0, 0]
+    final_nonshared_false_fusion_rate: 0 +/- 0; mean CI95 [0, 0]
+    random_prefix_shared_false_split_rate: 0.4556 +/- 0.022931018; mean CI95 [0.44486795, 0.46633205]
+    random_prefix_nonshared_false_fusion_rate: 0.004075 +/- 0.0021598916; mean CI95 [0.0030641396, 0.0050858604]
+  Gradient table
+    mean_squared_full_mapping: 126.7761 +/- 3.3038005; mean CI95 [125.22987, 128.32233]
+    budget_mean_squared_full_mapping: 125.26557 +/- 3.2509194; mean CI95 [123.74409, 126.78705]
+    final_squared_full_mapping: 5.635639e-08 +/- 2.4957474e-07; mean CI95 [-6.0448182e-08, 1.7316096e-07]
+    final_objective: -0.48324043 +/- 0.12732311; mean CI95 [-0.54282948, -0.42365138]
+    paired_population_gain: 0.15586807 +/- 0.037420848; mean CI95 [0.13835457, 0.17338156]
+    any_shared_false_split_rate: 1 +/- 0; mean CI95 [1, 1]
+    final_shared_false_split_rate: 0 +/- 0; mean CI95 [0, 0]
+    final_nonshared_false_fusion_rate: 0 +/- 0; mean CI95 [0, 0]
+    random_prefix_shared_false_split_rate: 0.43963415 +/- 0.02745071; mean CI95 [0.42678682, 0.45248147]
+    random_prefix_nonshared_false_fusion_rate: 0.0041412602 +/- 0.0021950118; mean CI95 [0.003113963, 0.0051685573]
+  Paired geometric_minus_inverse_inclusion
+    budget_mean_squared_full_mapping: -0.81699595 +/- 2.8193328; mean CI95 [-2.1364843, 0.50249243]
+    final_squared_full_mapping: 0.00015041275 +/- 0.0087723087; mean CI95 [-0.0039551541, 0.0042559796]
+    final_objective: 1.2063785 +/- 0.87309575; mean CI95 [0.79775709, 1.6149999]
+  Paired geometric_minus_client_gradient_table
+    budget_mean_squared_full_mapping: -1.7115485 +/- 0.50686607; mean CI95 [-1.9487691, -1.4743278]
+    final_squared_full_mapping: 0.019458878 +/- 0.0066067849; mean CI95 [0.016366808, 0.022550949]
+    final_objective: 1.3382071 +/- 0.92945405; mean CI95 [0.90320919, 1.773205]
+
+cross_block_nonconvex_stress
+  dimension={'N': 32, 'B': 4, 'block_dimension': 8, 'total_dimension': 32}; M=8; repetitions=20; budget=8000; h=0.015; gamma=0.00375; p=[0.25, 0.25, 0.25, 0.25]; tau=[0.15, 0.15, 0.25, 0.3]; L=6.8; sufficient h limit=0.016339869
+  Geometric
+    mean_squared_full_mapping: 168.80037 +/- 3.5758008; mean CI95 [167.12684, 170.4739]
+    budget_mean_squared_full_mapping: 168.80037 +/- 3.5758008; mean CI95 [167.12684, 170.4739]
+    final_squared_full_mapping: 0.029345048 +/- 0.0055557873; mean CI95 [0.026744859, 0.031945236]
+    final_objective: -0.47224798 +/- 0.00059089317; mean CI95 [-0.47252453, -0.47197144]
+    paired_population_gain: 0.16718077 +/- 0.00090788618; mean CI95 [0.16675587, 0.16760568]
+    any_shared_false_split_rate: 1 +/- 0; mean CI95 [1, 1]
+    final_shared_false_split_rate: 0.05 +/- 0.15389675; mean CI95 [-0.022025897, 0.1220259]
+    final_nonshared_false_fusion_rate: 0 +/- 0; mean CI95 [0, 0]
+    random_prefix_shared_false_split_rate: 0.234275 +/- 0.024713876; mean CI95 [0.22270855, 0.24584145]
+    random_prefix_nonshared_false_fusion_rate: 0.003975 +/- 0.0022564236; mean CI95 [0.0029189613, 0.0050310387]
+  Inverse inclusion
+    mean_squared_full_mapping: 168.18098 +/- 3.5503898; mean CI95 [166.51934, 169.84261]
+    budget_mean_squared_full_mapping: 168.18098 +/- 3.5503898; mean CI95 [166.51934, 169.84261]
+    final_squared_full_mapping: 0.024758178 +/- 0.0051497118; mean CI95 [0.022348039, 0.027168318]
+    final_objective: -0.47262635 +/- 0.00059246811; mean CI95 [-0.47290363, -0.47234907]
+    paired_population_gain: 0.16736241 +/- 0.00092019728; mean CI95 [0.16693174, 0.16779307]
+    any_shared_false_split_rate: 1 +/- 0; mean CI95 [1, 1]
+    final_shared_false_split_rate: 0 +/- 0; mean CI95 [0, 0]
+    final_nonshared_false_fusion_rate: 0 +/- 0; mean CI95 [0, 0]
+    random_prefix_shared_false_split_rate: 0.43455 +/- 0.03588978; mean CI95 [0.41775307, 0.45134693]
+    random_prefix_nonshared_false_fusion_rate: 0.003975 +/- 0.0022564236; mean CI95 [0.0029189613, 0.0050310387]
+  Gradient table
+    mean_squared_full_mapping: 173.02246 +/- 3.5669835; mean CI95 [171.35306, 174.69186]
+    budget_mean_squared_full_mapping: 177.93086 +/- 3.5098922; mean CI95 [176.28818, 179.57354]
+    final_squared_full_mapping: 3.1843916e-12 +/- 7.9270401e-12; mean CI95 [-5.2557738e-13, 6.8943606e-12]
+    final_objective: -0.47467068 +/- 0.00060225205; mean CI95 [-0.47495254, -0.47438881]
+    paired_population_gain: 0.1686603 +/- 0.00052302312; mean CI95 [0.16841552, 0.16890509]
+    any_shared_false_split_rate: 1 +/- 0; mean CI95 [1, 1]
+    final_shared_false_split_rate: 0 +/- 0; mean CI95 [0, 0]
+    final_nonshared_false_fusion_rate: 0 +/- 0; mean CI95 [0, 0]
+    random_prefix_shared_false_split_rate: 0.37863313 +/- 0.026897962; mean CI95 [0.3660445, 0.39122176]
+    random_prefix_nonshared_false_fusion_rate: 0.0040396341 +/- 0.0022931134; mean CI95 [0.002966424, 0.0051128443]
+  Paired geometric_minus_inverse_inclusion
+    budget_mean_squared_full_mapping: 0.61939204 +/- 3.1600287; mean CI95 [-0.8595469, 2.098331]
+    final_squared_full_mapping: 0.0045868695 +/- 0.001124283; mean CI95 [0.0040606889, 0.0051130502]
+    final_objective: 0.00037836825 +/- 9.2184115e-05; mean CI95 [0.00033522476, 0.00042151175]
+  Paired geometric_minus_client_gradient_table
+    budget_mean_squared_full_mapping: -9.1304904 +/- 0.66124379; mean CI95 [-9.439962, -8.8210187]
+    final_squared_full_mapping: 0.029345048 +/- 0.0055557873; mean CI95 [0.026744859, 0.031945236]
+    final_objective: 0.0024226942 +/- 0.00046241607; mean CI95 [0.0022062768, 0.0026391116]
+

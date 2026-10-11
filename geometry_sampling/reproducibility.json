@@ -1,0 +1,30 @@
+{
+  "python_version": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "numpy_version": "2.3.5",
+  "mode": "full_generation",
+  "numerical_replay": {
+    "checked": true,
+    "identical_bytes": true,
+    "results_sha256": "3235b11149c4aabf2e4257f7a5843689418b986abcd60fe450dd62c1079de306",
+    "source_sha256_at_full_replay": {
+      "verify.py": "3e3d06e9a84a027ceef45ad005d7cbbf0c9b1c12ff30ce1277d00413fbd38821",
+      "experiments.py": "4b223858f76a42c552e96e2717170d69003d9be444ec62fb93a3335b1dee3727",
+      "legacy_verify.py": "37f96e321bf34a567094122aaa43efb9548352698fdd17d3268c92d2b0c782ae"
+    }
+  },
+  "rendering_replay": {
+    "checked": true,
+    "identical_bytes": true
+  },
+  "output_sha256": {
+    "codes\\geometry_sampling\\results.json": "3235b11149c4aabf2e4257f7a5843689418b986abcd60fe450dd62c1079de306",
+    "codes\\geometry_sampling\\tables.tex": "e663dfc776f847c6bf774e514937913caca7e5321ce1c32cbfad109ae6c0ee3b",
+    "codes\\geometry_sampling\\plots.tex": "f198fc0547faacdee1f388e540626addfb2ba330a0631d099ef45b7e219c27fe",
+    "codes\\geometry_sampling\\full_experiments.tex": "d46a340006261c2af58653895de9f88e00f5b6f8aee55204d7f5c03344a9c2a6"
+  },
+  "source_sha256": {
+    "verify.py": "3e3d06e9a84a027ceef45ad005d7cbbf0c9b1c12ff30ce1277d00413fbd38821",
+    "experiments.py": "4b223858f76a42c552e96e2717170d69003d9be444ec62fb93a3335b1dee3727",
+    "legacy_verify.py": "37f96e321bf34a567094122aaa43efb9548352698fdd17d3268c92d2b0c782ae"
+  }
+}

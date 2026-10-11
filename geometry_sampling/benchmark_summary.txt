@@ -1,0 +1,103 @@
+Equal-budget multidimensional synthetic benchmark
+N=32, B=4, block dimension=8, total dimension=32, M=8, repeats=20.
+Budget=8000 client-block gradients/method/run. Selected step=0.015.
+Gradient table: 128 paid initialization calls + 984*8 update calls; 8192 bytes additional gradient storage.
+Geometric and inverse inclusion: 1000*8 update calls. Shared common schedule prefix.
+All reported +/- entries are sample SD over independent paired data/update runs.
+Budget mean mapping includes initialization cost at the initial state; update-time mean mapping does not.
+Structure in the coupled case is measured against linear-tilt signal labels, not minimizer sharing.
+Population gain = population risk(broadcast output mean)-population risk(personalized output).
+Actual generation wall time: 12.183 seconds.
+Full numerical replay wall time: 11.983 seconds.
+
+common_potential_nonconvex
+Geometric
+  mean_squared_full_mapping: 123.55402 +/- 3.1612957
+  budget_mean_squared_full_mapping: 123.55402 +/- 3.1612957
+  final_squared_full_mapping: 0.019458935 +/- 0.0066069095
+  final_objective: 0.85496665 +/- 0.96062048
+  paired_population_gain: -0.56904644 +/- 0.54771761
+  any_shared_false_split_rate: 0 +/- 0
+  final_shared_false_split_rate: 0 +/- 0
+  final_nonshared_false_fusion_rate: 0 +/- 0
+  random_prefix_shared_false_split_rate: 0 +/- 0
+  random_prefix_nonshared_false_fusion_rate: 0.004075 +/- 0.0021598916
+Inverse inclusion
+  mean_squared_full_mapping: 124.37102 +/- 2.0300263
+  budget_mean_squared_full_mapping: 124.37102 +/- 2.0300263
+  final_squared_full_mapping: 0.019308522 +/- 0.005590453
+  final_objective: -0.35141183 +/- 0.28776231
+  paired_population_gain: 0.099263303 +/- 0.11829279
+  any_shared_false_split_rate: 1 +/- 0
+  final_shared_false_split_rate: 0 +/- 0
+  final_nonshared_false_fusion_rate: 0 +/- 0
+  random_prefix_shared_false_split_rate: 0.4556 +/- 0.022931018
+  random_prefix_nonshared_false_fusion_rate: 0.004075 +/- 0.0021598916
+Gradient table
+  mean_squared_full_mapping: 126.7761 +/- 3.3038005
+  budget_mean_squared_full_mapping: 125.26557 +/- 3.2509194
+  final_squared_full_mapping: 5.635639e-08 +/- 2.4957474e-07
+  final_objective: -0.48324043 +/- 0.12732311
+  paired_population_gain: 0.15586807 +/- 0.037420848
+  any_shared_false_split_rate: 1 +/- 0
+  final_shared_false_split_rate: 0 +/- 0
+  final_nonshared_false_fusion_rate: 0 +/- 0
+  random_prefix_shared_false_split_rate: 0.43963415 +/- 0.02745071
+  random_prefix_nonshared_false_fusion_rate: 0.0041412602 +/- 0.0021950118
+Paired geometric minus inverse_inclusion
+  budget_mean_squared_full_mapping: -0.81699595, descriptive 95% paired-mean CI [-2.1364843, 0.50249243]
+  final_squared_full_mapping: 0.00015041275, descriptive 95% paired-mean CI [-0.0039551541, 0.0042559796]
+  final_objective: 1.2063785, descriptive 95% paired-mean CI [0.79775709, 1.6149999]
+Paired geometric minus client_gradient_table
+  budget_mean_squared_full_mapping: -1.7115485, descriptive 95% paired-mean CI [-1.9487691, -1.4743278]
+  final_squared_full_mapping: 0.019458878, descriptive 95% paired-mean CI [0.016366808, 0.022550949]
+  final_objective: 1.3382071, descriptive 95% paired-mean CI [0.90320919, 1.773205]
+
+cross_block_nonconvex_stress
+Geometric
+  mean_squared_full_mapping: 168.80037 +/- 3.5758008
+  budget_mean_squared_full_mapping: 168.80037 +/- 3.5758008
+  final_squared_full_mapping: 0.029345048 +/- 0.0055557873
+  final_objective: -0.47224798 +/- 0.00059089317
+  paired_population_gain: 0.16718077 +/- 0.00090788618
+  any_shared_false_split_rate: 1 +/- 0
+  final_shared_false_split_rate: 0.05 +/- 0.15389675
+  final_nonshared_false_fusion_rate: 0 +/- 0
+  random_prefix_shared_false_split_rate: 0.234275 +/- 0.024713876
+  random_prefix_nonshared_false_fusion_rate: 0.003975 +/- 0.0022564236
+Inverse inclusion
+  mean_squared_full_mapping: 168.18098 +/- 3.5503898
+  budget_mean_squared_full_mapping: 168.18098 +/- 3.5503898
+  final_squared_full_mapping: 0.024758178 +/- 0.0051497118
+  final_objective: -0.47262635 +/- 0.00059246811
+  paired_population_gain: 0.16736241 +/- 0.00092019728
+  any_shared_false_split_rate: 1 +/- 0
+  final_shared_false_split_rate: 0 +/- 0
+  final_nonshared_false_fusion_rate: 0 +/- 0
+  random_prefix_shared_false_split_rate: 0.43455 +/- 0.03588978
+  random_prefix_nonshared_false_fusion_rate: 0.003975 +/- 0.0022564236
+Gradient table
+  mean_squared_full_mapping: 173.02246 +/- 3.5669835
+  budget_mean_squared_full_mapping: 177.93086 +/- 3.5098922
+  final_squared_full_mapping: 3.1843916e-12 +/- 7.9270401e-12
+  final_objective: -0.47467068 +/- 0.00060225205
+  paired_population_gain: 0.1686603 +/- 0.00052302312
+  any_shared_false_split_rate: 1 +/- 0
+  final_shared_false_split_rate: 0 +/- 0
+  final_nonshared_false_fusion_rate: 0 +/- 0
+  random_prefix_shared_false_split_rate: 0.37863313 +/- 0.026897962
+  random_prefix_nonshared_false_fusion_rate: 0.0040396341 +/- 0.0022931134
+Paired geometric minus inverse_inclusion
+  budget_mean_squared_full_mapping: 0.61939204, descriptive 95% paired-mean CI [-0.8595469, 2.098331]
+  final_squared_full_mapping: 0.0045868695, descriptive 95% paired-mean CI [0.0040606889, 0.0051130502]
+  final_objective: 0.00037836825, descriptive 95% paired-mean CI [0.00033522476, 0.00042151175]
+Paired geometric minus client_gradient_table
+  budget_mean_squared_full_mapping: -9.1304904, descriptive 95% paired-mean CI [-9.439962, -8.8210187]
+  final_squared_full_mapping: 0.029345048, descriptive 95% paired-mean CI [0.026744859, 0.031945236]
+  final_objective: 0.0024226942, descriptive 95% paired-mean CI [0.0022062768, 0.0026391116]
+
+Limitations: two synthetic exact-gradient cases, fixed common step and thresholds; no per-method
+tuning or application/system timing comparison. Dense implementation; memory above counts
+gradient-table payload only. Full diagnostics and data preprocessing are separated from
+training budget. No blanket superiority or guarantee beyond the manuscript hypotheses.
+Numerical checks: {"centered_prox_block_vs_full_error": 0.0, "common_gradient_exactness_error": 0.0, "coupled_gradient_finite_difference_error": 1.359039103476789e-09, "full_participation_error": 1.1102230246251565e-16, "geometric_variance_error": 0.0, "sampled_vs_full_gradient_error": 0.0, "table_variance_error": 8.881784197001252e-16, "unbiasedness_max_errors": {"client_gradient_table": 2.220446049250313e-16, "geometric": 4.440892098500626e-16, "inverse_inclusion": 2.220446049250313e-16}}
